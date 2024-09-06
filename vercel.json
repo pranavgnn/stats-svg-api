@@ -4,9 +4,6 @@
         {
             "src": "server.py",
             "use": "@vercel/python",
-            "config": {
-                "runtime": "python37"
-            }
         }
     ],
     "routes": [
