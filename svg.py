@@ -6,12 +6,12 @@ padding = 1 # px
 def get_box_svg(i, j, value):
     return f"""
     <rect
-        id="{i}, {j}"
-        width={box_size}
-        height={box_size}
-        rx=2.5
-        transform="translate({i * (box_size + padding)}, {j * (box_size + padding)})"
-        fill="{"#161b22" if value == 0 else "#26a641"}"
+        id='{i}, {j}'
+        width='{box_size}'
+        height='{box_size}'
+        rx='2.5'
+        transform='translate({i * (box_size + padding)}, {j * (box_size + padding)})'
+        fill='{"#161b22" if value == 0 else "#26a641"}'
     />
     """
 
@@ -36,15 +36,14 @@ def get(username):
 
     svg_str = f"""
 <svg
-    width="{svg_width}"
-    height="{svg_height}"
-    viewBox="0 0 {svg_width} {svg_height}"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    style="isolation: isolate"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-labelledby="descId">
+    xmlns='http://www.w3.org/2000/svg'
+    xmlns:xlink='http://www.w3.org/1999/xlink'
+    width='{svg_width}'
+    height='{svg_height}'
+    viewBox='0 0 {svg_width} {svg_height}'
+    style='isolation: isolate'
+    fill='none'
+    role='img'
 >
     """ + svg_str + "\n</svg>"
         
