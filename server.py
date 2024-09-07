@@ -5,11 +5,11 @@ import svg
 app = Flask(__name__)
 
 @app.route("/<username>")
-def get_svg(username):
+def make_svg(username):
     year = int(request.args.get("year", datetime.date.today().year))
-    theme = request.args.get("theme", "dark")
+    theme = request.args.get("theme", "light")
 
-    svg_str = svg.get(username, year, theme)
+    svg_str = svg.make(username, year, theme)
     if not svg_str:
         return Response("Bad parameters", 400)
 

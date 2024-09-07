@@ -2,7 +2,7 @@ import contributions
 import colors
 
 box_size = 11 # px
-padding = 1 # px
+padding = 2 # px
 
 def get_box_svg(i, j, value, tot_value, theme):
     return f"""
@@ -16,7 +16,7 @@ def get_box_svg(i, j, value, tot_value, theme):
     />
     """
 
-def get(username, year, theme):
+def make(username, year, theme):
     if theme not in colors.themes: return
 
     svg_str = ""
