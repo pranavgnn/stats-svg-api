@@ -1,10 +1,24 @@
+import datetime
+from ordinal import ordinal
 import contributions
 import colors
 
 box_size = 11 # px
 padding = 2 # px
 
-def get_box_svg(i, j, value, tot_value, theme):
+def get_tooltip_text(value, date):
+    tooltip = ""
+
+    tooltip += ("No" if value == 0 else str(value)) + " contributions" # No contributions / {value} contributions
+    if value == 1: tooltip = tooltip[:-1] # 1 contribution / n contributions
+    tooltip += " on " + date.strftime("%B") + " " + ordinal(date.day) + "." # on MONTH ordinal(day).
+
+    return tooltip
+
+def get_box_svg(i, j, value, tot_value, year, theme):
+
+    date = datetime.date(year, 1, 1) + datetime.timedelta(days=value)
+
     return f"""
     <rect
         id='{i}, {j}'
@@ -13,7 +27,11 @@ def get_box_svg(i, j, value, tot_value, theme):
         rx='2.5'
         transform='translate({i * (box_size + padding)}, {j * (box_size + padding)})'
         fill='{colors.get_box_color(theme, value, tot_value)}'
-    />
+    >
+        <title>
+            {get_tooltip_text(value, date)}
+        </title>
+    </rect>
     """
 
 def make(username, year, theme):
@@ -31,7 +49,7 @@ def make(username, year, theme):
 
         for j, value in row.items():
             n = max(j, n)
-            svg_str += get_box_svg(i, j, value, highest_value, theme)
+            svg_str += get_box_svg(i, j, value, highest_value, year, theme)
 
     svg_width = (m + 1) * box_size + m * padding
     svg_height = (n + 1) * box_size + n * padding
