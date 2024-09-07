@@ -107,7 +107,7 @@ def make(username, year, theme):
     <g>
         <text
             style='font-family: "Roboto";'
-            x='50%' y='25'
+            x='50%' y='27'
             fill='{colors.get_text_color(theme)}'
             dominant-baseline='middle'
             text-anchor='middle'
