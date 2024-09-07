@@ -1,9 +1,9 @@
-# Commit History SVG
-<img  src="https://stats-svg-api.vercel.app/pranavgnn?theme=dark"/>
+<h1> Commit History SVG </h1><br/>
+<img src="https://stats-svg-api.vercel.app/pranavgnn?theme=dark"/>
+<hr/>
 
----
+<h3>Usage</h3>
 
-### Usage
 
 ```https://stats-svg-api.vercel.app/USERNAME?theme=THEME&year=YEAR```
 

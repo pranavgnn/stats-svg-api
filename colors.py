@@ -4,6 +4,7 @@ themes = {
     "dark": {
         "bg": "#0d1117",
         "fg": "#f0f6fc",
+        "border": "#3d444d",
         0: "#161b22",
         1: "#0e4429",
         2: "#006d32",
@@ -14,6 +15,7 @@ themes = {
     "light": {
         "bg": "#ffffff",
         "fg": "#1f2328",
+        "border": "#d1d9e0",
         0: "#ebedf0",
         1: "#9be9a8",
         2: "#40c463",

@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 import datetime
 import svg
 
@@ -14,6 +14,10 @@ def make_svg(username):
         return Response("Bad parameters", 400)
 
     return Response(svg_str, mimetype="image/svg+xml")
+
+@app.route("/")
+def home():
+    return render_template("home.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
